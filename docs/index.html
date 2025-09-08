@@ -214,30 +214,60 @@
   </div>
 </section>
 
+<!-- Proyectos destacados -->
+<section class="section" id="proyectos">
+  <h3>Proyectos destacados</h3>
 
-
-
-      <div class="panel">
-        <div class="media">
-          <div class="item" id="demo">
-            <span class="badge">GIF de demostración</span>
-            <!-- IMPORTANTE: rutas absolutas dentro de carpeta visual (https://raw.githubusercontent.com/CrisSanguine/dashboard-portfolio-PBI/main/visual/) para GitHub Pages -->
-            <img src="https://raw.githubusercontent.com/CrisSanguine/dashboard-portfolio-PBI/main/visual/default.gif" alt="Gif de demo del dashboard" loading="eager" />
-            <noscript>
-              <p>Si no ves la animación, verificá que el archivo <code>visual/default.gif</code> exista en el repositorio.</p>
-            </noscript>
-          </div>
-          <div class="item">
-            <span class="badge">Video MP4 (autoplay, muted, loop)</span>
-            <video width="100%" autoplay muted loop playsinline controls poster="./visual/poster.jpg">
-              <!-- Usa una ruta relativa EXACTA y sensible a mayúsculas/minúsculas -->
-              <source src="https://raw.githubusercontent.com/CrisSanguine/dashboard-portfolio-PBI/main/visual/default.mp4" type="video/mp4" />
-              Tu navegador no soporta el video HTML5. Descargalo aquí: <a href="./visual/default.mp4">MP4</a>.
-            </video>
-          </div>
-        </div>
+  <!-- Fila 1: Card izquierda, Video derecha -->
+  <div style="display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start; margin-top:1.5rem;">
+    
+    <!-- Card izquierda -->
+    <article class="card" style="flex:1; min-width:250px; max-width:500px;">
+      <h4>Ventas y Forecast</h4>
+      <p class="serif">Modelo de ventas con estacionalidad, DAX para KPIs y visuales de proyección.</p>
+      <div class="skills">
+        <span class="badge">Power BI</span>
+        <span class="badge">DAX</span>
+        <span class="badge">ETL</span>
       </div>
-    </section>
+    </article>
+
+    <!-- Video derecha -->
+    <div class="item" style="flex:1; min-width:250px; max-width:600px;">
+      <span class="badge">Video MP4 (autoplay, muted, loop)</span>
+      <video width="100%" autoplay muted loop playsinline controls poster="./visual/poster.jpg">
+        <source src="https://raw.githubusercontent.com/CrisSanguine/dashboard-portfolio-PBI/main/visual/default.mp4" type="video/mp4" />
+        Tu navegador no soporta el video HTML5. Descargalo aquí: <a href="./visual/default.mp4">MP4</a>.
+      </video>
+    </div>
+
+  </div>
+
+  <!-- Fila 2: Video izquierda, Card derecha -->
+  <div style="display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start; margin-top:2rem;">
+
+    <!-- Video izquierda -->
+    <div class="item" style="flex:1; min-width:250px; max-width:600px;">
+      <span class="badge">Video MP4 (autoplay, muted, loop)</span>
+      <video width="100%" autoplay muted loop playsinline controls poster="./visual/poster.jpg">
+        <source src="https://raw.githubusercontent.com/CrisSanguine/dashboard-portfolio-PBI/main/visual/default.mp4" type="video/mp4" />
+        Tu navegador no soporta el video HTML5. Descargalo aquí: <a href="./visual/default.mp4">MP4</a>.
+      </video>
+    </div>
+
+    <!-- Card derecha -->
+    <article class="card" style="flex:1; min-width:250px; max-width:500px;">
+      <h4>Análisis Financiero</h4>
+      <p class="serif">Dashboard de KPIs financieros con modelado de datos y proyecciones trimestrales.</p>
+      <div class="skills">
+        <span class="badge">Power BI</span>
+        <span class="badge">Python</span>
+        <span class="badge">SQL</span>
+      </div>
+    </article>
+
+  </div>
+</section>
 
     <!-- Proyectos destacados -->
     <section class="section" id="proyectos">
