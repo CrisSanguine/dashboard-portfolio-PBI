@@ -1,19 +1,251 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Mi Dashboard Power BI</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="description" content="Portafolio de Analista de Datos: proyectos, visualizaciones, CV y formas de contacto." />
+  <meta property="og:title" content="Portafolio | Analista de Datos" />
+  <meta property="og:description" content="Explorá dashboards, casos de uso y código." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <title>Mi Dashboard Power BI · Portafolio Analista de Datos</title>
+
+  <!-- Fuentes Google (seguras para GitHub Pages) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b1020;             /* azul petróleo muy oscuro */
+      --panel: #0e1726;          /* panel oscuro */
+      --muted: #8ea0b8;          /* texto secundario */
+      --txt: #e6eefb;            /* texto principal */
+      --brand: #38bdf8;          /* cian */
+      --brand-2: #22d3ee;        /* cian claro */
+      --accent: #a78bfa;         /* violeta */
+      --ok: #34d399;             /* verde */
+      --warn: #fbbf24;           /* amarillo */
+      --danger: #fb7185;         /* coral */
+      --shadow: 0 10px 25px rgba(0,0,0,0.35);
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 10px;
+      --gap: 22px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; background:linear-gradient(180deg,var(--bg),#0a0f1a 40%, #0b1326); color:var(--txt); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+    a{color:var(--brand)}
+    img,video{display:block; max-width:100%; height:auto; border-radius:var(--radius-lg); box-shadow:var(--shadow)}
+
+    /* Layout */
+    .wrap{max-width:1100px; margin:0 auto; padding:28px 18px 80px}
+    header{
+      position:sticky; top:0; z-index:10; backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient(180deg, rgba(14,23,38,0.9), rgba(14,23,38,0.6));
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 18px}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+    .logo{width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--accent)); box-shadow: 0 0 0 2px rgba(255,255,255,0.06), var(--shadow)}
+    .brand h1{font:800 18px/1 Inter, sans-serif; letter-spacing:0.2px; margin:0}
+    .menu{display:flex; gap:14px; flex-wrap:wrap}
+    .menu a{padding:10px 14px; text-decoration:none; color:var(--txt); border-radius:999px; border:1px solid rgba(255,255,255,0.08)}
+    .menu a:hover{border-color:transparent; background:linear-gradient(135deg, rgba(56,189,248,0.15), rgba(167,139,250,0.12))}
+
+    .hero{display:grid; grid-template-columns: 1.2fr 1fr; gap:var(--gap); align-items:center; padding:38px 18px 10px}
+    .hero h2{font:800 46px/1.05 Inter, sans-serif; margin:6px 0 10px; letter-spacing:0.2px}
+    .hero p{color:var(--muted); font-size:18px}
+    .pill{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,0.1); color:var(--brand-2); background:rgba(56,189,248,0.08)}
+
+    .stats{display:grid; grid-template-columns: repeat(3, 1fr); gap:var(--gap); margin-top:18px}
+    .stat{padding:18px; background:linear-gradient(180deg, #0f1a2c, #0c1626); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-lg); box-shadow:var(--shadow)}
+    .stat h3{margin:0; font:800 28px/1 Inter}
+    .stat p{margin:4px 0 0; color:var(--muted)}
+
+    .section{margin-top:46px}
+    .section h3{font:800 28px/1.15 Inter, sans-serif; margin:0 0 14px}
+    .section .sub{color:var(--muted); margin:-6px 0 18px}
+
+    .panel{padding:18px; border-radius:var(--radius-xl); background: radial-gradient(1200px 600px at 20% -10%, rgba(56,189,248,0.08), transparent 40%), radial-gradient(900px 600px at 120% 10%, rgba(167,139,250,0.08), transparent 30%), #0e1726; border:1px solid rgba(255,255,255,0.08); box-shadow:var(--shadow)}
+
+    .grid{display:grid; gap:var(--gap)}
+    .grid.cols-2{grid-template-columns: repeat(2, 1fr)}
+    .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
+
+    .card{padding:16px; background:linear-gradient(180deg,#0f1a2c,#0c1626); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-lg); box-shadow:var(--shadow)}
+    .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:#0b213a; border:1px solid rgba(255,255,255,0.1); color:#c7d8ee; font-size:12px}
+
+    .skills{display:flex; flex-wrap:wrap; gap:10px}
+
+    .media{display:grid; gap:var(--gap)}
+    .media .item{display:grid; gap:10px}
+
+    footer{margin:60px 0 20px; color:var(--muted); text-align:center}
+
+    /* Responsivo */
+    @media (max-width: 980px){
+      .hero{grid-template-columns: 1fr}
+      .stats{grid-template-columns: 1fr 1fr}
+      .grid.cols-3{grid-template-columns: 1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .stats,.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+      .hero h2{font-size:34px}
+    }
+
+    /* Tipografía secundaria para citas/descripciones */
+    .serif{font-family:"Source Serif 4", Georgia, serif}
+  </style>
 </head>
 <body>
-  <h1>Bienvenido a mi HOOLAAAA portafolio</h1>
-  <p>Acá podés ver un ejemplo de análisis de datos:</p>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#">
+        <span class="logo" aria-hidden="true"></span>
+        <h1>Portafolio · Analista de Datos</h1>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="#demo">Demo</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- GIF de demostración -->
-  <img src="visual/default.gif" alt="Demo Dashboard" width="100%">
+  <main class="wrap">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <span class="pill">Disponible para proyectos freelance</span>
+        <h2>Transformo datos en decisiones con <span style="background:linear-gradient(135deg,var(--brand),var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent;">Power BI, Python y SQL</span>.</h2>
+        <p class="serif">Dashboarding, modelado de datos, storytelling y automatizaciones ligeras. En esta página vas a ver demos reales (MP4 + GIF), casos de uso y cómo trabajo.</p>
+        <div class="stats">
+          <div class="stat"><h3>+30</h3><p>Dashboards entregados</p></div>
+          <div class="stat"><h3>+12</h3><p>Sectores analizados</p></div>
+          <div class="stat"><h3>98%</h3><p>SLA de entregas a tiempo</p></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="media">
+          <div class="item" id="demo">
+            <span class="badge">GIF de demostración</span>
+            <!-- IMPORTANTE: rutas relativas (./visual/...) para GitHub Pages -->
+            <img src="./visual/default.gif" alt="Gif de demo del dashboard" loading="eager" />
+            <noscript>
+              <p>Si no ves la animación, verificá que el archivo <code>visual/default.gif</code> exista en el repositorio.</p>
+            </noscript>
+          </div>
+          <div class="item">
+            <span class="badge">Video MP4 (autoplay, muted, loop)</span>
+            <video width="100%" autoplay muted loop playsinline controls poster="./visual/poster.jpg">
+              <!-- Usa una ruta relativa EXACTA y sensible a mayúsculas/minúsculas -->
+              <source src="./visual/default.mp4" type="video/mp4" />
+              Tu navegador no soporta el video HTML5. Descargalo aquí: <a href="./visual/default.mp4">MP4</a>.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Video de demostración -->
-  <video width="100%" autoplay muted loop playsinline>
-    <source src="visual/default.mp4" type="video/mp4">
-    Tu navegador no soporta el video.
-  </video>
+    <!-- Proyectos destacados -->
+    <section class="section" id="proyectos">
+      <h3>Proyectos destacados</h3>
+      <p class="sub">Casos reales con foco en impacto de negocio, limpieza de datos y visualización efectiva.</p>
+      <div class="grid cols-3">
+        <article class="card">
+          <h4>Ventas y Forecast</h4>
+          <p class="serif">Modelo de ventas con estacionalidad, DAX para KPIs y visuales de proyección.</p>
+          <div class="skills">
+            <span class="badge">Power BI</span>
+            <span class="badge">DAX</span>
+            <span class="badge">ETL</span>
+          </div>
+        </article>
+        <article class="card">
+          <h4>Churn en Clientes</h4>
+          <p class="serif">Segmentación por RFM y score de abandono con Python + visual en PBI.</p>
+          <div class="skills">
+            <span class="badge">Python</span>
+            <span class="badge">Scikit-learn</span>
+            <span class="badge">Power BI</span>
+          </div>
+        </article>
+        <article class="card">
+          <h4>Logística y SLA</h4>
+          <p class="serif">KPIs de entregas, heatmaps y control de SLA por zona y operador.</p>
+          <div class="skills">
+            <span class="badge">SQL</span>
+            <span class="badge">Geo</span>
+            <span class="badge">Power Query</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section class="section" id="habilidades">
+      <h3>Habilidades y stack</h3>
+      <div class="grid cols-2">
+        <div class="card">
+          <h4>Analítica</h4>
+          <p class="serif">Storytelling, diseño de KPIs, métricas accionables, pruebas A/B, cohortes.</p>
+          <div class="skills">
+            <span class="badge">Power BI</span>
+            <span class="badge">DAX</span>
+            <span class="badge">Power Query</span>
+            <span class="badge">SQL (PostgreSQL / MySQL)</span>
+            <span class="badge">Python (pandas)</span>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Ingeniería ligera</h4>
+          <p class="serif">Orígenes múltiples, modelado estrella, ETL/ELT, automatizaciones.</p>
+          <div class="skills">
+            <span class="badge">dbt (conceptos)</span>
+            <span class="badge">Azure / GSheets</span>
+            <span class="badge">APIs</span>
+            <span class="badge">Git</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section panel" id="contacto">
+      <h3>Contacto</h3>
+      <p class="sub">¿Querés que armemos un dashboard o revisar tus KPIs? Escribime:</p>
+      <form action="https://formspree.io/f/your-id" method="POST" class="grid cols-2" style="gap:12px">
+        <input name="name" required placeholder="Tu nombre" style="padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background:#0b213a; color:var(--txt)" />
+        <input name="email" type="email" required placeholder="Tu email" style="padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background:#0b213a; color:var(--txt)" />
+        <textarea name="mensaje" rows="4" placeholder="Contame del proyecto" style="grid-column:1/-1; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background:#0b213a; color:var(--txt)"></textarea>
+        <button type="submit" style="justify-self:start; padding:12px 18px; border-radius:999px; border:1px solid rgba(255,255,255,0.1); background:linear-gradient(135deg, var(--brand), var(--accent)); color:#0b1020; font-weight:800; letter-spacing:0.3px; box-shadow:var(--shadow)">Enviar</button>
+      </form>
+      <p style="margin-top:12px; font-size:12px; color:var(--muted)">* Podés reemplazar Formspree por tu propio backend o mailto:.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="y"></span> · Analista de Datos — Hecho con ♥ y datos. <a href="#">Volver arriba</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Año dinámico en el pie de página
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Verificación simple de assets: intenta cargar MP4 y GIF y loguea si fallan
+    (function(){
+      const check = (url, label) => fetch(url, {method:'HEAD'}).then(r=>{
+        if(!r.ok){console.warn(`[Aviso] No se encontró ${label}:`, url)}
+      }).catch(()=>console.warn(`[Aviso] No se encontró ${label}:`, url));
+      check('./visual/default.gif','GIF');
+      check('./visual/default.mp4','MP4');
+    })();
+  </script>
 </body>
 </html>
