@@ -127,7 +127,7 @@
 
       <!-- Columna izquierda -->
       <div>
-        <!-- Título (solo media pantalla) -->
+        <!-- Título -->
         <h2 style="font-size:2.5rem; margin-bottom:1.5rem;">
           Transformo datos en decisiones con 
           <span style="background:linear-gradient(135deg,var(--brand),var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent;">
@@ -144,59 +144,73 @@
           <span style="color:#8B4513; font-weight:600;">Documentación final</span>.
         </p>
 
-        <!-- Stats SIN estilos adicionales -->
+        <!-- Stats -->
         <div class="stats">
           <div class="stat"><h3>+20</h3><p>Dashboards presentados</p></div>
           <div class="stat"><h3>+12</h3><p>Áreas organizacionales analizadas</p></div>
           <div class="stat"><h3>3</h3><p>Casos reales presentados</p></div>
         </div>
-      </div>
 
-      <!-- Columna derecha (imagen con badge) -->
-      <div class="item" id="demo" style="text-align:center; width:100%;">
-        <span class="badge">Presentación</span>
-        <!-- Imagen de GitHub con tamaño fijo -->
-        <img src="https://github.com/CrisSanguine/dashboard-portfolio-PBI/blob/main/visual/drive_crissanguine.gif?raw=true" 
-             alt="Presentación Crissanguine" 
-             loading="eager"
-             width="600" height="300"
-             style="display:block; margin:20px auto; max-width:600px; height:300px;" />
-        <noscript>
-          <p>Si no ves la imagen, verificá que el archivo esté disponible en Google Drive con permisos públicos.</p>
-        </noscript>
-      </div>
-
-      <!-- Texto y lista + emblema en columnas -->
-      <div style="margin-top:2rem; display:flex; align-items:flex-start; gap:2rem; flex-wrap:wrap;">
-        
-        <!-- Columna izquierda: texto y lista -->
-        <div style="flex:1; min-width:250px;">
-          <p class="serif" style="margin-bottom:0.5rem;">
-            En esta web vas a ver mis Dashboards de Análisis de Datos:
-          </p>
-          <ul class="serif" style="list-style:disc; margin-left:1.5rem; line-height:1.6;">
-            <li>Objetivos</li>
-            <li>Fuentes de datos</li>
-            <li>KPI</li>
-            <li>Resultados</li>
-            <li>Acciones Concretas</li>
-          </ul>
-        </div>
-      
-        <!-- Columna derecha: emblema de Credly -->
-        <div style="flex:0 0 auto;">
-          <div data-iframe-width="150" data-iframe-height="270" 
-               data-share-badge-id="65ff7290-fb0d-48c7-8ae2-cb04be2dd747" 
-               data-share-badge-host="https://www.credly.com">
+        <!-- GIF de demostración -->
+        <div class="media" style="margin-top:2rem;">
+          <div class="item" id="demo">
+            <span class="badge">GIF de demostración</span>
+            <img src="https://raw.githubusercontent.com/CrisSanguine/dashboard-portfolio-PBI/main/visual/default.gif" 
+                 alt="Gif de demo del dashboard" 
+                 loading="eager" 
+                 style="display:block; margin:20px auto; max-width:600px; height:auto;" />
+            <noscript>
+              <p>Si no ves la animación, verificá que el archivo <code>visual/default.gif</code> exista en el repositorio.</p>
+            </noscript>
           </div>
-          <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
         </div>
-      
       </div>
 
+      <!-- Columna derecha -->
+      <div>
+        <!-- Imagen/GIF de Drive -->
+        <div class="item" id="demo" style="margin-bottom:2rem; text-align:center;">
+          <span class="badge">Presentación</span>
+          <img src="https://github.com/CrisSanguine/dashboard-portfolio-PBI/blob/main/visual/drive_crissanguine.gif?raw=true" 
+               alt="Presentación Crissanguine" 
+               loading="eager"
+               width="600" height="300"
+               style="display:block; margin:20px auto; max-width:600px; height:300px;" />
+          <noscript>
+            <p>Si no ves la imagen, verificá que el archivo esté disponible en Google Drive con permisos públicos.</p>
+          </noscript>
+        </div>
 
+        <!-- Lista + emblema Credly -->
+        <div style="margin-top:2rem; display:flex; align-items:flex-start; gap:2rem; flex-wrap:wrap;">
+          <!-- Texto y lista -->
+          <div style="flex:1; min-width:250px;">
+            <p class="serif" style="margin-bottom:0.5rem;">
+              En esta web vas a ver mis Dashboards de Análisis de Datos:
+            </p>
+            <ul class="serif" style="list-style:disc; margin-left:1.5rem; line-height:1.6;">
+              <li>Objetivos</li>
+              <li>Fuentes de datos</li>
+              <li>KPI</li>
+              <li>Resultados</li>
+              <li>Acciones Concretas</li>
+            </ul>
+          </div>
+          <!-- Emblema Credly -->
+          <div style="flex:0 0 auto;">
+            <div data-iframe-width="150" data-iframe-height="270" 
+                 data-share-badge-id="65ff7290-fb0d-48c7-8ae2-cb04be2dd747" 
+                 data-share-badge-host="https://www.credly.com">
+            </div>
+            <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
+
 
 
 
