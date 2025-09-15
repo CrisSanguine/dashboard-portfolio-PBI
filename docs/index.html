@@ -11,23 +11,23 @@
   <meta property="og:locale" content="es_AR" />
   <title>Power BI Dashboards · Analista de Datos</title>
 
-  <!-- Fuentes Google (seguras para GitHub Pages) -->
+  <!-- Fuentes Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #0b1020;             /* azul petróleo muy oscuro */
-      --panel: #0e1726;          /* panel oscuro */
-      --muted: #8ea0b8;          /* texto secundario */
-      --txt: #e6eefb;            /* texto principal */
-      --brand: #38bdf8;          /* cian */
-      --brand-2: #22d3ee;        /* cian claro */
-      --accent: #a78bfa;         /* violeta */
-      --ok: #34d399;             /* verde */
-      --warn: #fbbf24;           /* amarillo */
-      --danger: #fb7185;         /* coral */
+      --bg: #0b1020;
+      --panel: #0e1726;
+      --muted: #8ea0b8;
+      --txt: #e6eefb;
+      --brand: #38bdf8;
+      --brand-2: #22d3ee;
+      --accent: #a78bfa;
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --danger: #fb7185;
       --shadow: 0 10px 25px rgba(0,0,0,0.35);
       --radius-xl: 22px;
       --radius-lg: 16px;
@@ -79,7 +79,6 @@
     .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:#0b213a; border:1px solid rgba(255,255,255,0.1); color:#c7d8ee; font-size:12px}
 
     .skills{display:flex; flex-wrap:wrap; gap:10px}
-
     .media{display:grid; gap:var(--gap)}
     .media .item{display:grid; gap:10px}
 
@@ -94,9 +93,14 @@
     @media (max-width: 640px){
       .stats,.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
       .hero h2{font-size:34px}
+
+      /* Hero grid en 1 columna */
+      .hero-grid{grid-template-columns:1fr !important}
+
+      /* Ocultar GIF solo en móviles */
+      .gif-demo{display:none !important}
     }
 
-    /* Tipografía secundaria para citas/descripciones */
     .serif{font-family:"Source Serif 4", Georgia, serif}
   </style>
 </head>
@@ -152,9 +156,8 @@
         </div>
 
         <!-- GIF de demostración -->
-        <div class="media" style="margin-top:2rem;">
+        <div class="media gif-demo" style="margin-top:2rem;">
           <div class="item" id="demo">
-             <!--  <span class="badge">GIF de demostración</span> -->
             <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTBncnh5MHRxc3phZWNhbmhjbXNmaHFwZWdiYXMzNDd1OTF6Mm45MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eKV3P1IFX185laegIa/giphy.gif" 
                  alt="Gif de demo del dashboard" 
                  loading="eager" 
@@ -198,7 +201,7 @@
             </ul>
           </div>
         
-          <!-- Columna derecha: emblema Credly centrado con la lista -->
+          <!-- Columna derecha: emblema Credly -->
           <div style="flex:0 0 auto; align-self:center;">
             <div data-iframe-width="150" data-iframe-height="270" 
                  data-share-badge-id="65ff7290-fb0d-48c7-8ae2-cb04be2dd747" 
@@ -208,8 +211,7 @@
           </div>
         
         </div>
-
-
+      </div>
     </div>
   </div>
 </section>
