@@ -761,38 +761,51 @@
 
 </section>
 
-    <!-- Contacto -->
-    <section class="section panel" id="contacto">
-      <h3>Contacto</h3>
-      <p class="sub">¿Querés que armemos un dashboard o revisar tus KPIs? Escribime:</p>
-      <form action="https://formspree.io/f/your-id" method="POST" class="grid cols-2" style="gap:12px">
-        <input name="name" required placeholder="Tu nombre" style="padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background:#0b213a; color:var(--txt)" />
-        <input name="email" type="email" required placeholder="Tu email" style="padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background:#0b213a; color:var(--txt)" />
-        <textarea name="mensaje" rows="4" placeholder="Contame del proyecto" style="grid-column:1/-1; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background:#0b213a; color:var(--txt)"></textarea>
-        <button type="submit" style="justify-self:start; padding:12px 18px; border-radius:999px; border:1px solid rgba(255,255,255,0.1); background:linear-gradient(135deg, var(--brand), var(--accent)); color:#0b1020; font-weight:800; letter-spacing:0.3px; box-shadow:var(--shadow)">Enviar</button>
-      </form>
-      <p style="margin-top:12px; font-size:12px; color:var(--muted)">* Podés reemplazar Formspree por tu propio backend o mailto:.</p>
+    <!-- Contacto / Biografía -->
+    <section class="section panel" id="contacto" style="display:flex; flex-wrap:wrap; gap:2rem; margin-top:2rem; justify-content:center;">
+    
+      <!-- Mini biografía -->
+      <div style="flex:1; min-width:250px; max-width:400px; background:#0b213a; padding:1rem 1.5rem; border-radius:12px; color:var(--txt); box-shadow:var(--shadow);">
+        <h3 style="margin-top:0; margin-bottom:0.5rem;">Sobre mí</h3>
+        <p class="serif" style="margin:0 0 1rem 0; text-align:center;">
+          Soy Analista de Datos con experiencia en visualización de dashboards, optimización de procesos y análisis de KPI para la toma de decisiones. Me apasiona transformar datos en información accionable.
+        </p>
+        <div class="skills" style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center;">
+          <span class="badge">Power BI</span>
+          <span class="badge">Python</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Excel</span>
+          <span class="badge">ETL</span>
+          <span class="badge">DAX</span>
+          <span class="badge">Tableau</span>
+          <span class="badge">R</span>
+        </div>
+      </div>
+    
+      <!-- Contacto LinkedIn -->
+      <div style="flex:1; min-width:250px; max-width:400px; background:#0b213a; padding:1rem 1.5rem; border-radius:12px; box-shadow:var(--shadow); color:var(--txt); text-align:center;">
+        <h3 style="margin-top:0; margin-bottom:0.5rem;">Contacto</h3>
+        <p class="serif" style="margin:0 0 1rem 0;">
+          ¿Querés que trabajemos en un proyecto de datos o revisar tus KPIs? Contactame directamente por LinkedIn:
+        </p>
+        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" style="display:inline-block; text-decoration:none; padding:12px 18px; border-radius:999px; border:1px solid rgba(255,255,255,0.1); background:linear-gradient(135deg, var(--brand), var(--accent)); color:#0b1020; font-weight:800; letter-spacing:0.3px; box-shadow:var(--shadow);">
+          Ir a mi LinkedIn
+        </a>
+      </div>
+    
     </section>
-  </main>
+    
+    <footer>
+      <div class="wrap">
+        <p>© <span id="y"></span> · Analista de Datos — Hecho con ♥ y datos. <a href="#">Volver arriba</a></p>
+      </div>
+    </footer>
+    
+    <script>
+      // Año dinámico en el pie de página
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
 
-  <footer>
-    <div class="wrap">
-      <p>© <span id="y"></span> · Analista de Datos — Hecho con ♥ y datos. <a href="#">Volver arriba</a></p>
-    </div>
-  </footer>
 
-  <script>
-    // Año dinámico en el pie de página
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Verificación simple de assets: intenta cargar MP4 y GIF y loguea si fallan
-    (function(){
-      const check = (url, label) => fetch(url, {method:'HEAD'}).then(r=>{
-        if(!r.ok){console.warn(`[Aviso] No se encontró ${label}:`, url)}
-      }).catch(()=>console.warn(`[Aviso] No se encontró ${label}:`, url));
-      check('./visual/default.gif','GIF');
-      check('./visual/default.mp4','MP4');
-    })();
-  </script>
 </body>
 </html>
