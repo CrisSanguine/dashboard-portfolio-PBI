@@ -98,6 +98,23 @@ footer{margin:60px 0 20px; color:var(--muted); text-align:center;}
   .logo{width:36px; height:36px;}
 }
 
+    /* Media query para celulares muy pequeños (360px o menos) */
+@media (max-width: 360px) {
+  .hero-freelance h2 {
+    font-size: 1.6rem !important; /* achica el título */
+    line-height: 1.2; /* opcional, para que no quede muy alto */
+  }
+
+  .hero-freelance p {
+    font-size: 0.9rem; /* achica subtítulos o párrafos si los hay */
+  }
+
+  .hero-freelance .hero-grid {
+    grid-template-columns: 1fr; /* pasa a 1 columna para que quepa */
+    gap: 1rem;
+  }
+}
+
 /* TABLET 361px a 769px */
 @media (min-width: 361px) and (max-width: 769px) {
   .hero{grid-template-columns:1fr; padding:28px 18px;}
@@ -141,7 +158,7 @@ footer{margin:60px 0 20px; color:var(--muted); text-align:center;}
 
   <main class="wrap">
     <!-- Hero -->
-<section class="hero">
+<section class="hero hero-freelance">
   <div>
     <span class="pill">Disponible para proyectos freelance</span>
 
